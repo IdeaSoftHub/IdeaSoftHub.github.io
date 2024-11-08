@@ -4,7 +4,7 @@ Welcome to the repository for IdeaSoft website, hosted on GitHub Pages. This sit
 
 ## Website URL
 
-[IdeaSoft](https://ideas0ft.github.io/IdeaSoft/)
+[IdeaSoft](https://ideasofthub.github.io/)
 ## Technologies Used
 
 - HTML5
