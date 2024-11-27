@@ -209,7 +209,7 @@
     <h1>IdeaSoft</h1>
     <p class="subtitle">Discover a world of innovative mobile experiences</p>
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
-      <i class="fas fa-sun" id="theme-icon"></i>
+      <i class="fas fa-moon" id="theme-icon"></i>
     </button>
   </header>
 
@@ -301,17 +301,33 @@
 
     // Theme toggle functionality
     const themeToggleButton = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+
+    function setTheme(theme) {
+      document.body.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+
+      // Updated icon logic - sun for dark mode, moon for light mode
+      if (theme === "dark") {
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+      } else {
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+      }
+    }
+
     themeToggleButton.addEventListener("click", () => {
       const currentTheme = document.body.getAttribute("data-theme");
-      document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
-      document.getElementById("theme-icon").classList.toggle("fa-moon");
-      document.getElementById("theme-icon").classList.toggle("fa-sun");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      setTheme(newTheme);
     });
 
     // Initial theme setup
-    const savedMode = localStorage.getItem("mode");
+    const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    document.body.setAttribute("data-theme", savedMode || (systemPrefersDark ? "dark" : "light"));
+    const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+    setTheme(initialTheme);
   });
 
   // Function to create an app card
