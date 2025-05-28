@@ -1,6 +1,6 @@
-# IdeaSoft
+# Ideya
 
-Welcome to the repository for IdeaSoft website, hosted on GitHub Pages. This site showcases the projects developed by IdeaSoft.
+Welcome to the repository for Ideya website, hosted on GitHub Pages. This site showcases the projects developed by Ideya.
 
 ## Website URL
 
